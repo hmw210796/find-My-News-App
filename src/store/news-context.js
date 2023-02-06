@@ -42,7 +42,7 @@ export const NewsContextProvider = (props) => {
 
     try {
       const response = await axios.get(
-        `https://newsdata.io/api/1/news?apikey=pub_1648239a95bae5945770550d359d65e955b33&language=en&qInTitle=${searchKeyword}`
+        `https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWS_API}&language=en&qInTitle=${searchKeyword}`
       );
 
       if (!response.data) {
@@ -68,7 +68,7 @@ export const NewsContextProvider = (props) => {
     setMoreNewsLoading(true);
 
     const response = await axios.get(
-      `https://newsdata.io/api/1/news?apikey=pub_1648239a95bae5945770550d359d65e955b33&language=en&qInTitle=${searchKeyword}&page=${pageNo}  `
+      `https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWS_API}&language=en&qInTitle=${searchKeyword}&page=${pageNo}  `
     );
 
     if (!response.data) {

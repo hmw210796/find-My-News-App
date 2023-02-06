@@ -1,3 +1,4 @@
+import React from "react";
 import NewsItem from "./NewsItem";
 import "./DisplayResults.css";
 import { Fragment, useContext } from "react";
@@ -40,6 +41,7 @@ const DisplayResults = () => {
       <div className="flex h-full  items-center justify-center">
         <h1 className="w-3/4 text-center text-5xl text-white">
           <span className="font-bold uppercase text-red-600">{error}</span>
+          {process.env.REACT_APP_TITLE}
           <br />
           Please search for your favorite topic to get started :)
         </h1>
